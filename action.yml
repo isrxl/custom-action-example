@@ -1,0 +1,15 @@
+name: 'My Custom Docker Action'
+description: 'An example Docker container action'
+inputs:
+  my-input:
+    description: 'Input value for the action'
+    required: true
+    default: 'default value'
+outputs:
+  my-output:
+    description: 'Output value from the action'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.my-input }}
