@@ -1,0 +1,15 @@
+name: Example Workflow
+
+on: [push]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Run my custom action
+        uses: ./  # Points to the action in the repository
+        with:
+          my-input: "Custom input value"
